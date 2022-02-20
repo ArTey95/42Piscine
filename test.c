@@ -53,16 +53,18 @@ int	ft_putmat(char *input_fixed)
 	fill_clue(clue, input_fixed);
 	ft_pre_processing(clue, 6);
 	ft_solve(1, 1, clue);
-	i = 0;
-	j = 0;
-	while (j < 6)
+	i = 1;
+	j = 1;
+	while (j < 5)
 	{	
-		while (i < 6)
+		while (i < 5)
 		{
 			write(1, &clue[i][j], 1);
+			if (i != 4)
+				write(1, " ", 1);
 			i++;
 		}
-		i = 0;
+		i = 1;
 		j++;
 		write(1, "\n", 1);
 	}
